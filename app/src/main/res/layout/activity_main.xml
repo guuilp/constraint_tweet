@@ -9,4 +9,120 @@
     android:background="@color/mirage"
     android:padding="16dp">
 
+    <ImageView
+        android:id="@+id/retweet_top"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+
+        android:src="@drawable/ic_retweet"
+        android:tint="@color/gray"
+
+        app:layout_constraintTop_toTopOf="@+id/retweet_user"
+        app:layout_constraintBottom_toBottomOf="@+id/retweet_user"
+        app:layout_constraintRight_toRightOf="@id/profile_image"/>
+
+    <TextView
+        android:id="@+id/retweet_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Nicolas Roard retweetou"
+        android:textColor="@color/gray"
+
+        app:layout_constraintTop_toTopOf="@id/retweet_top"
+        app:layout_constraintLeft_toLeftOf="@+id/username"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+
+        android:src="@drawable/profile_image"
+
+        app:layout_constraintTop_toBottomOf="@+id/retweet_top"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+
+        tools:text="Florina Muntenescu"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+
+        app:layout_constraintTop_toTopOf="@+id/profile_image"
+        app:layout_constraintLeft_toRightOf="@+id/profile_image"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+
+        tools:text="You found a bug in Android/Jetpacksuetracker.google.com so the teams know about it. Complaining on Twitter won't get that bug fixed."
+        android:textColor="@color/white"
+
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintLeft_toLeftOf="@+id/username"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageView
+        android:id="@+id/comment"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="12dp"
+
+        android:src="@drawable/ic_comment"
+        android:tint="@color/gray"
+
+        app:layout_constraintTop_toBottomOf="@+id/text"
+        app:layout_constraintLeft_toLeftOf="@+id/text"
+        app:layout_constraintRight_toLeftOf="@id/retweet"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+
+    <ImageView
+        android:id="@+id/retweet"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+
+        android:src="@drawable/ic_retweet"
+        android:tint="@color/gray"
+
+        app:layout_constraintTop_toTopOf="@+id/comment"
+        app:layout_constraintLeft_toRightOf="@+id/comment"
+        app:layout_constraintRight_toLeftOf="@+id/favorite"/>
+
+    <ImageView
+        android:id="@+id/favorite"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+
+        android:src="@drawable/ic_favorite"
+        android:tint="@color/gray"
+
+        app:layout_constraintTop_toTopOf="@+id/comment"
+        app:layout_constraintLeft_toRightOf="@+id/retweet"
+        app:layout_constraintRight_toLeftOf="@+id/share"/>
+
+    <ImageView
+        android:id="@+id/share"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+
+        android:src="@drawable/ic_share"
+        android:tint="@color/gray"
+
+        app:layout_constraintTop_toTopOf="@+id/comment"
+        app:layout_constraintLeft_toRightOf="@+id/favorite"
+        app:layout_constraintRight_toRightOf="@+id/text"/>
+
+    <android.support.constraint.Group
+        android:id="@+id/group_retweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="retweet_top, retweet_user"/>
+
 </android.support.constraint.ConstraintLayout>
